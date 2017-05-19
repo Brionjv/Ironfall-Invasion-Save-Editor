@@ -11,3 +11,5 @@ c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Edit
 C:\Users\Brion\Documents\Visual Studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall_Invasion_Save_Editor.Form2.resources
 C:\Users\Brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\PackageIO.dll
 C:\Users\Brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall Invasion Save Editor.vbprojResolveAssemblyReference.cache
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\fr\Microsoft.VisualBasic.PowerPacks.Vs.resources.dll

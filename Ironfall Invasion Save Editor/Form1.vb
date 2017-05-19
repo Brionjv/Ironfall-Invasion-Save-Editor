@@ -2,6 +2,9 @@
 Public Class Form1
     Dim filepath As String
     Dim fdialog As New Form2
+    Dim Yrecord As String
+    Dim SPrecord As String
+    Dim SPname As String
     Private Sub NumericUpDown2_ValueChanged(sender As Object, e As EventArgs) Handles NumericUpDown2.ValueChanged
         If NumericUpDown2.Value <= 99999 Then
             TextBox3.Text = "1"
@@ -256,5 +259,113 @@ Public Class Form1
         ElseIf CheckBox7.Checked = False Then
             NumericUpDown17.Value = 0
         End If
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBox1.SelectedIndexChanged
+        Try
+            Dim Reader As New PackageIO.Reader(filepath, PackageIO.Endian.Little)
+            If ComboBox1.SelectedItem = ComboBox1.Items.Item(0) Then
+                Reader.Position = &H1584 'your record
+                Yrecord = Reader.Position
+                NumericUpDown9.Value = Reader.ReadInt16
+                Reader.Position = &H1588 'StreetPass record
+                SPrecord = Reader.Position
+                NumericUpDown10.Value = Reader.ReadInt16
+                Reader.Position = &H158C 'StreetPass name
+                SPname = Reader.Position
+                TextBox4.Text = Reader.ReadUnicodeString(8)
+            ElseIf ComboBox1.SelectedItem = ComboBox1.Items.Item(1) Then
+                Reader.Position = &H1584 + &H28 'your record
+                Yrecord = Reader.Position
+                NumericUpDown9.Value = Reader.ReadInt16
+                Reader.Position = &H1588 + &H28 'StreetPass record
+                SPrecord = Reader.Position
+                NumericUpDown10.Value = Reader.ReadInt16
+                Reader.Position = &H158C + &H28 'StreetPass name
+                SPname = Reader.Position
+                TextBox4.Text = Reader.ReadUnicodeString(8)
+            ElseIf ComboBox1.SelectedItem = ComboBox1.Items.Item(2) Then
+                Reader.Position = &H1584 + (&H28 * 2) 'your record
+                Yrecord = Reader.Position
+                NumericUpDown9.Value = Reader.ReadInt16
+                Reader.Position = &H1588 + (&H28 * 2) 'StreetPass record
+                SPrecord = Reader.Position
+                NumericUpDown10.Value = Reader.ReadInt16
+                Reader.Position = &H158C + (&H28 * 2) 'StreetPass name
+                SPname = Reader.Position
+                TextBox4.Text = Reader.ReadUnicodeString(8)
+            ElseIf ComboBox1.SelectedItem = ComboBox1.Items.Item(3) Then
+                Reader.Position = &H1584 + (&H28 * 3) 'your record
+                Yrecord = Reader.Position
+                NumericUpDown9.Value = Reader.ReadInt16
+                Reader.Position = &H1588 + (&H28 * 3) 'StreetPass record
+                SPrecord = Reader.Position
+                NumericUpDown10.Value = Reader.ReadInt16
+                Reader.Position = &H158C + (&H28 * 3) 'StreetPass name
+                SPname = Reader.Position
+                TextBox4.Text = Reader.ReadUnicodeString(8)
+            ElseIf ComboBox1.SelectedItem = ComboBox1.Items.Item(4) Then
+                Reader.Position = &H1584 + (&H28 * 4) 'your record
+                Yrecord = Reader.Position
+                NumericUpDown9.Value = Reader.ReadInt16
+                Reader.Position = &H1588 + (&H28 * 4) 'StreetPass record
+                SPrecord = Reader.Position
+                NumericUpDown10.Value = Reader.ReadInt16
+                Reader.Position = &H158C + (&H28 * 4) 'StreetPass name
+                SPname = Reader.Position
+                TextBox4.Text = Reader.ReadUnicodeString(8)
+            ElseIf ComboBox1.SelectedItem = ComboBox1.Items.Item(5) Then
+                Reader.Position = &H1584 + (&H28 * 5) 'your record
+                Yrecord = Reader.Position
+                NumericUpDown9.Value = Reader.ReadInt16
+                Reader.Position = &H1588 + (&H28 * 5) 'StreetPass record
+                SPrecord = Reader.Position
+                NumericUpDown10.Value = Reader.ReadInt16
+                Reader.Position = &H158C + (&H28 * 5) 'StreetPass name
+                SPname = Reader.Position
+                TextBox4.Text = Reader.ReadUnicodeString(8)
+            End If
+        Catch ex As Exception
+            fdialog.Label1.Text = "An error has occured, load a save file first"
+            fdialog.ShowDialog()
+        End Try
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Writerecord()
+    End Sub
+    Private Sub Writerecord()
+        Try
+            Dim Writer As New PackageIO.Writer(filepath, PackageIO.Endian.Little)
+            Writer.Position = Yrecord
+            Writer.WriteUInt16(NumericUpDown9.Value)
+            Writer.Position = SPrecord
+            Writer.WriteUInt16(NumericUpDown10.Value)
+            For i As Integer = 0 To 7 'delete some characters before write
+                Writer.Position = SPname + i
+                Writer.WriteInt8(0)
+            Next
+            Writer.Position = SPname
+            Writer.WriteUnicodeString(TextBox4.Text)
+            fdialog.Label1.Text = "Records save"
+            fdialog.ShowDialog()
+        Catch ex As Exception
+            fdialog.Label1.Text = "An error has occured, load a save file first"
+            fdialog.ShowDialog()
+        End Try
+    End Sub
+    Private Sub TabPage1_MouseMove(sender As Object, e As EventArgs) Handles TabPage1.MouseMove
+        Label16.Text = "Check/uncheck to unlock weapons or not"
+        Label16.Visible = True
+    End Sub
+    Private Sub TabPage1_MouseLeave(sender As Object, e As EventArgs) Handles TabPage1.MouseLeave
+        Label16.Visible = False
+    End Sub
+    Private Sub RadioButton1_MouseMove(sender As Object, e As EventArgs) Handles RadioButton1.MouseMove
+        Label16.Text = "Check to unlock all challenges"
+        Label16.Visible = True
+    End Sub
+    Private Sub RadioButton1_MouseLeave(sender As Object, e As EventArgs) Handles RadioButton1.MouseLeave
+        Label16.Visible = False
     End Sub
 End Class
