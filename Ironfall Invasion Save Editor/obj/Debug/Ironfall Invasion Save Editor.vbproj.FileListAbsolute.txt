@@ -1,0 +1,13 @@
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\Ironfall Invasion Save Editor.exe.config
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\Ironfall Invasion Save Editor.exe
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\Ironfall Invasion Save Editor.pdb
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\Ironfall Invasion Save Editor.xml
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall_Invasion_Save_Editor.Form1.resources
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall_Invasion_Save_Editor.Resources.resources
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall Invasion Save Editor.vbproj.GenerateResource.Cache
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall Invasion Save Editor.exe
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall Invasion Save Editor.xml
+c:\users\brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall Invasion Save Editor.pdb
+C:\Users\Brion\Documents\Visual Studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall_Invasion_Save_Editor.Form2.resources
+C:\Users\Brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\bin\Debug\PackageIO.dll
+C:\Users\Brion\documents\visual studio 2012\Projects\Ironfall Invasion Save Editor\Ironfall Invasion Save Editor\obj\Debug\Ironfall Invasion Save Editor.vbprojResolveAssemblyReference.cache
